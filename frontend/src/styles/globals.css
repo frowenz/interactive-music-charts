@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --ideal-square-size: 300px;
+  --grid-padding: 5px;
+  --num-squares-per-row: 0;
+  --muted-foreground: #dcdcdc;
 }
 
 @media (prefers-color-scheme: dark) {
