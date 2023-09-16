@@ -1,22 +1,25 @@
 // AlbumSquare.tsx
 import React from 'react';
-import '@styles/AlbumSquare.css';
+import '@styles/grid.css';
 
 interface AlbumSquareProps {
   color: string;
   artist: string;
-  album: string;
+  name: string;
   image: string;
   releaseDate: string;
   link: string;
   inDropdown?: boolean;
   key: React.Key;
+  onDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
+  onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  onDragEnd: () => void;
 }
 
 const AlbumSquare: React.FC<AlbumSquareProps> = ({
   color,
   artist,
-  album,
+  name,
   image,
   releaseDate,
   link = '',
@@ -25,15 +28,15 @@ const AlbumSquare: React.FC<AlbumSquareProps> = ({
 }) => {
   return (
     <div
-      className={`dynamic-square ${inDropdown ? 'drop-down-square' : ''}`}
+      className={`dynamic-square flex ${inDropdown ? 'drop-down-square' : ''}`}
       style={{ backgroundColor: color }}
+      draggable
       {...dragProps}
       onClick={() => {
-        // if (link) window.open(link, '_blank');
-        if (link) window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
+        if (link) window.open(link, '_blank');
       }}
     >
-      <img src={image} alt={`${artist} - ${album}`} />
+      <img src={image} alt={`${artist} - ${name}`} />
     </div>
   );
 };

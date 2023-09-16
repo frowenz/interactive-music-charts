@@ -1,3 +1,7 @@
+:root {
+  --square-size: calc((100vw - ((1 + var(--num-squares-per-row)) * var(--grid-padding))) / var(--num-squares-per-row));
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(var(--num-squares-per-row), 1fr);
@@ -6,7 +10,6 @@
 }
 
 .dynamic-square {
-  --square-size: calc((100vw - ((1 + var(--num-squares-per-row)) * var(--grid-padding))) / var(--num-squares-per-row));
   width: var(--square-size);
   height: var(--square-size);
   transition: all 0.3s ease, transform 0.1s ease;
@@ -22,4 +25,16 @@
   width: unset;
   height: unset;
   z-index: 12;
+}
+
+.header-element {
+  width: calc(100dvw - 2 * var(--grid-padding));
+  height: var(--square-size);
+  grid-column: 1 / -1;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  opacity: 0.8;
 }

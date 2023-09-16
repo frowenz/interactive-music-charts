@@ -9,8 +9,6 @@ import { DraggedItemProvider } from '@/contexts/DraggedItemContext';
 const idealSquareSize = 300;
 
 const Home: React.FC = () => {
-
-
   useEffect(() => {
     const updateSquareSize = () => {
       const width = window.innerWidth;
@@ -37,7 +35,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center">
       <DraggedItemProvider>
         <AlbumSearchBar />
         <AlbumGrid/>
