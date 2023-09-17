@@ -9,10 +9,10 @@
 
   --ideal-square-size: 300px;
   --grid-padding: 5px;
-  --num-squares-per-row: 0;
-
+  --num-squares-per-row: 1;
 
   --primary: #2c2c659c;
+  --secondary: #348a29ad;
   --muted-foreground: #dcdcdc;
 }
 

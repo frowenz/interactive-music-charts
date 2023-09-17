@@ -10,6 +10,7 @@ const Dropdown = ({ data, setQuery }) => {
   const handleDragStart = (e, album) => {
     setQuery('');
     setDraggedItem({
+      type: 'album',
       color: generateRandomColor(),
       artist: album.artists[0].name,
       name: album.name,
@@ -20,7 +21,7 @@ const Dropdown = ({ data, setQuery }) => {
   };
 
   return (
-    <div className="absolute top left-0 w-full z-10 overflow-x-auto">
+    <div className="absolute top left-0 w-screen z-10 overflow-x-auto">
       <div className="bg-gray-100 shadow-lg flex flex-row">
         {data.map((album) => (
             <AlbumSquare

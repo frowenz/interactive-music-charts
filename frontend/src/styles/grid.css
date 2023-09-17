@@ -7,9 +7,12 @@
   grid-template-columns: repeat(var(--num-squares-per-row), 1fr);
   gap: var(--grid-padding);
   padding: var(--grid-padding);
+  width: 100dvw;
 }
 
 .dynamic-square {
+  display: flex;
+  justify-content: center;
   width: var(--square-size);
   height: var(--square-size);
   transition: all 0.3s ease, transform 0.1s ease;
@@ -29,7 +32,6 @@
 
 .header-element {
   width: calc(100dvw - 2 * var(--grid-padding));
-  height: var(--square-size);
   grid-column: 1 / -1;
   background-color: var(--primary);
   display: flex;
@@ -37,4 +39,21 @@
   align-items: center;
   font-style: italic;
   opacity: 0.8;
+}
+
+.header-element input {
+  background-color: transparent;
+  width: fit-content;
+}
+
+.save {
+  background-color: var(--secondary);
+}
+
+.add-heading {
+  background-color: var(--secondary);
+}
+
+main {
+  padding: var(--grid-padding);
 }
