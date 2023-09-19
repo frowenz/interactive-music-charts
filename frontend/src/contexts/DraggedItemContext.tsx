@@ -15,7 +15,7 @@ interface ContextProps {
 
 const DraggedItemContext = createContext<ContextProps | undefined>(undefined);
 
-export const DraggedItemProvider: FC = ({ children }) => {
+export const DraggedItemProvider = ({ children }: { children: React.ReactNode }) => {
   const [draggedItem, setDraggedItem] = useState<DraggedItem | null>(null);
 
   return (
@@ -24,7 +24,6 @@ export const DraggedItemProvider: FC = ({ children }) => {
     </DraggedItemContext.Provider>
   );
 };
-
 export const useDraggedItem = (): ContextProps => {
   const context = useContext(DraggedItemContext);
   if (!context) {
